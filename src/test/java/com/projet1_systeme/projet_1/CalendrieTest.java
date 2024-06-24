@@ -17,8 +17,8 @@ public class CalendrieTest {
     public void isHolidaysDate() throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         CalendarJune calandar = new CalendarJune();
-        calandar.addHoliday(sdf.parse("2024-06-01"));
-        List<String> tab = Arrays.asList("Sat Jun 01 00:00:00 EAT 2024");
+        calandar.addHoliday(sdf.parse("2024-06-17"));
+        List<String> tab = Arrays.asList("Mon Jun 17 00:00:00 EAT 2024");
         String expected = tab.get(0);
         String result = String.valueOf(calandar.displayHolidays().get(0));
         assertEquals(expected, result);

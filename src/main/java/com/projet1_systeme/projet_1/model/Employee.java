@@ -9,20 +9,16 @@ import java.util.List;
 
 @AllArgsConstructor
 @Getter
-public class Employe {
-    private String nom;
-    private String prenom;
-    private String numeroMatricule;
-    private Date dateDembauche;
-    private Date dateDeFinDecontrat;
-    private float montantDuSalaire;
-    Categorie categorie;
+public class Employee {
+    private String lastName;
+    private String firstName;
+    private String employeeNumber;
+    private Date hireDate;
+    private Date contractEndDate;
+    private float salaryAmount;
+    private Category category;
 
     public int work(Calendar calendar, List<Pointage> pointageList){
-
         return 0;
     }
-
-
-
 }

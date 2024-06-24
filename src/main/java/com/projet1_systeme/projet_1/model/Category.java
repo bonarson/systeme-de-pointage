@@ -7,7 +7,7 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class Categorie  {
+public class Category {
     private String nom;
     private int nombreHeureNormalParSemaine;
     private float salaireParSemaine;

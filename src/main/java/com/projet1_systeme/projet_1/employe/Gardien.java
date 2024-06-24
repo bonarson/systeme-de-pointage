@@ -1,25 +1,22 @@
 package com.projet1_systeme.projet_1.employe;
 
-import com.projet1_systeme.projet_1.model.Categorie;
-import com.projet1_systeme.projet_1.model.Employe;
-
+import com.projet1_systeme.projet_1.model.Category;
+import com.projet1_systeme.projet_1.model.Employee;
 import lombok.Getter;
 
 import java.util.Date;
 
 @Getter
-public class Gardien extends Employe {
+public class Gardien extends Employee {
 
 
-    public Gardien(String nom, String prenom, String numeroMatricule, Date dateDembauche, Date dateDeFinDecontrat, float montantDuSalaire, Categorie categorie) {
-        super(nom, prenom, numeroMatricule, dateDembauche, dateDeFinDecontrat, montantDuSalaire, categorie);
+    public Gardien(String lastName, String firstName, String employeeNumber, Date hireDate, Date contractEndDate, float salaryAmount, Category category) {
+        super(lastName, firstName, employeeNumber, hireDate, contractEndDate, salaryAmount, category);
     }
-
-
 
     @Override
     public String toString() {
-        return "Gardien{" +super.getNom();
+        return "Gardien{" +super.getEmployeeNumber();
 
     }
 }

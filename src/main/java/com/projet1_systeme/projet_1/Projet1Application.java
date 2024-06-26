@@ -25,16 +25,29 @@ public class Projet1Application {
 
     public static void main(String[] args) throws ParseException {
 
-        SpringApplication.run(Projet1Application.class, args);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//        SpringApplication.run(Projet1Application.class, args);
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//        CalendarJune calendarJune = new CalendarJune();
+//        calendarJune.addPointage(sdf.parse("2024-06-01"), 8, "STD22108");
+//        calendarJune.addPointage(sdf.parse("2024-06-02"), 8, "STD22108");
+//        calendarJune.addPointage(sdf.parse("2024-06-03"), 8, "STD22104");
+//
+//
+//        System.out.println(calendarJune.countHourNumber("STD22104"));
+//
+//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//        CalendarJune calendarJune = new CalendarJune();
+//
+//        int expectedRakoto = 420;
+//        int expectedRabe = 588;
+//        for (int i = 0; i < 42; i++) {
+//            calendarJune.addPointage(sdf.parse("2024-05-"+(26+i)+""), 10, "STD22108", "Jour");
+//           // calendarJune.addPointage(sdf.parse("2024-05-" + 26 + i + ""), 14, "STD22104", "Nuit");
+//        }
+//        System.out.println(calendarJune.displayPointages());
+
         CalendarJune calendarJune = new CalendarJune();
-        calendarJune.addPointage(sdf.parse("2024-06-01"), 8, "STD22108");
-        calendarJune.addPointage(sdf.parse("2024-06-02"), 8, "STD22108");
-        calendarJune.addPointage(sdf.parse("2024-06-03"), 8, "STD22104");
-
-
-        System.out.println(calendarJune.countHourNumber("STD22104"));
-
+        System.out.println(calendarJune.salaryGuardian(420, "STD22108", 3));
 
     }
 

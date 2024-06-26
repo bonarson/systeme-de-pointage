@@ -4,14 +4,16 @@ import java.util.Date;
 
 public class Pointage {
     private Date date;
-   private int nombreHeures;
+    private int numberOfHours;
 
-    private String NumeroMatricule;
+    private String serialNumberEmployee;
+    private String status;
 
-    public Pointage(Date date, int nombreHeures, String numeroMatricule) {
+    public Pointage(Date date, int numberOfHours, String serialNumberEmployee, String status) {
         this.date = date;
-        this.nombreHeures = nombreHeures;
-        NumeroMatricule = numeroMatricule;
+        this.numberOfHours = numberOfHours;
+        this.serialNumberEmployee = serialNumberEmployee;
+        this.status = status;
     }
 
     public Date getDate() {
@@ -22,28 +24,37 @@ public class Pointage {
         this.date = date;
     }
 
-    public int getNombreHeures() {
-        return nombreHeures;
+    public int getNumberOfHours() {
+        return numberOfHours;
     }
 
-    public void setNombreHeures(int nombreHeures) {
-        this.nombreHeures = nombreHeures;
+    public void setNumberOfHours(int numberOfHours) {
+        this.numberOfHours = numberOfHours;
     }
 
-    public String getNumeroMatricule() {
-        return NumeroMatricule;
+    public String getSerialNumberEmployee() {
+        return serialNumberEmployee;
     }
 
-    public void setNumeroMatricule(String numeroMatricule) {
-        NumeroMatricule = numeroMatricule;
+    public void setSerialNumberEmployee(String serialNumberEmployee) {
+        this.serialNumberEmployee = serialNumberEmployee;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
     public String toString() {
         return "Pointage{" +
                 "date=" + date +
-                ", nombreHeures=" + nombreHeures +
-                ", NumeroMatricule='" + NumeroMatricule + '\'' +
+                ", numberOfHours=" + numberOfHours +
+                ", serialNumberEmployee='" + serialNumberEmployee + '\'' +
+                ", status='" + status + '\'' +
                 '}';
     }
 }

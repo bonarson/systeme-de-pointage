@@ -1,8 +1,11 @@
 package com.projet1_systeme.projet_1.calandar;
 
+import com.projet1_systeme.projet_1.indemnite.Supplementaires;
 import com.projet1_systeme.projet_1.model.Pointage;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -14,6 +17,8 @@ public class CalendarJune {
         this.pointages = new ArrayList<>();
         this.holidays = new ArrayList<>();
     }
+
+    Supplementaires supplementaires = new Supplementaires();
 
     public void addHoliday(Date date) {
         holidays.add(date);
@@ -36,11 +41,11 @@ public class CalendarJune {
         return false;
     }
 
-    public void addPointage(Date date, int hours, String employeeId) {
+    public void addPointage(Date date, int numberOfHours, String serialNumberEmployee, String status) {
         if (isHoliday(date)) {
             System.out.println("Holiday");
         } else {
-            Pointage pointage = new Pointage(date, hours, employeeId);
+            Pointage pointage = new Pointage(date, numberOfHours, serialNumberEmployee, status);
             pointages.add(pointage);
         }
     }
@@ -50,27 +55,48 @@ public class CalendarJune {
     }
 
     public List<Pointage> displayPointages() {
-//        for (Pointage pointage : pointages) {
-//            System.out.println(pointage);
-//        }
         return pointages;
     }
 
     public List<Date> displayHolidays() {
-//        for (Date holiday : holidays) {
-//            System.out.println("Holiday: " + holiday);
-//        }
-
         return holidays;
     }
+
     int x = 0;
-    public int countHourNumber(String employeNumber) {
+
+    public int sumOfNumberWorking(String serialNumberEmployee) {
 
         for (int i = 0; i < displayPointages().size(); i++) {
-            if (displayPointages().get(i).getNumeroMatricule().equals(employeNumber)) {
-                x += displayPointages().get(i).getNombreHeures();
+            if (displayPointages().get(i).getSerialNumberEmployee().equals(serialNumberEmployee)) {
+                x += displayPointages().get(i).getNumberOfHours();
             }
         }
         return x;
+    }
+
+    public Double salaryGuardian(int sumOfNumberWorking, String serialGuardian, int numberHolidays) {
+        Double salary = (double) 0;
+        String serialRakoto = "STD22108";
+        String serialRabe = "STD22104";
+        if (serialGuardian.equals(serialRakoto)) {
+            if (sumOfNumberWorking <= 390) {
+                salary = (double) (sumOfNumberWorking * ((1 * 100000 / 7) / 10));
+            } else {
+                salary = ((sumOfNumberWorking - (numberHolidays * 10)) * ((1 * 100000 / 7) / 10) +
+                        supplementaires.calculSupplementaires("gardien",
+                                numberHolidays * 10, serialGuardian));
+            }
+
+        } else if (serialGuardian.equals(serialRabe)) {
+            if (sumOfNumberWorking <= 546) {
+                salary = (double) (sumOfNumberWorking * ((1 * 130000 / 7) / 14));
+            } else {
+                salary = ((sumOfNumberWorking - (numberHolidays * 14)) * ((1 * 130000 / 7) / 14)) +
+                        supplementaires.calculSupplementaires("gardien",
+                                numberHolidays * 14, serialGuardian);
+            }
+
+        }
+        return salary;
     }
 }

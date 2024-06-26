@@ -6,7 +6,6 @@ import org.junit.jupiter.api.Test;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -29,12 +28,24 @@ public class CalendrieTest {
     public void sumOfNumberWorkingthrows() throws ParseException {
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         CalendarJune calendarJune = new CalendarJune();
-        int expected = 8;
-        calendarJune.addPointage(sdf.parse("2024-06-01"), 8, "STD22108");
-        calendarJune.addPointage(sdf.parse("2024-06-02"), 8, "STD22108");
-        calendarJune.addPointage(sdf.parse("2024-06-03"), 8, "STD22104");
-        assertEquals(expected,calendarJune.countHourNumber("STD22104"));
 
+        int expectedRakoto = 420;
+        int expectedRabe = 588;
+        for (int i = 0; i < 42; i++) {
+            calendarJune.addPointage(sdf.parse("2024-05-" + (26 + i) + ""), 10, "STD22108", "Jour");
+            calendarJune.addPointage(sdf.parse("2024-05-" + (26 + i) + ""), 14, "STD22104", "Nuit");
+        }
+        System.out.println(calendarJune.displayPointages());
+        assertEquals(expectedRakoto, calendarJune.sumOfNumberWorking("STD22108"));
+
+    }
+
+    @Test
+    public void salaryGuardian() {
+        double salaryRabe = 796395.6;
+        double salaryRakoto = 612612.0;
+        CalendarJune calendarJune = new CalendarJune();
+        assertEquals(salaryRakoto, calendarJune.salaryGuardian(420, "STD22108", 3));
     }
 
 

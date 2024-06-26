@@ -12,7 +12,7 @@ import java.util.List;
 public class Employee {
     private String lastName;
     private String firstName;
-    private String employeeNumber;
+    private String serialNumberEmployee;
     private Date hireDate;
     private Date contractEndDate;
     private float salaryAmount;

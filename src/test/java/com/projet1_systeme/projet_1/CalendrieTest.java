@@ -42,11 +42,22 @@ public class CalendrieTest {
 
     @Test
     public void salaryGuardian() {
-        double salaryRabe = 796395.6;
-        double salaryRakoto = 612612.0;
+        // Rabe
+        double salaryBrutRabe = 788970.0;
+        double salaryNetRabe = 631176.0;
+        double salaryRabe = 788970.0;
+        // Rakoto
+        double salaryBrutRakoto = 606900.0;
+        double salaryNetRakoto = 485520.0;
+        double salaryRakoto = 606900.0;
         CalendarJune calendarJune = new CalendarJune();
-        assertEquals(salaryRakoto, calendarJune.salaryGuardian(420, "STD22108", 3));
-    }
+        assertEquals(salaryRakoto, calendarJune.salaryGuardian(420, "STD22108", 1));
+        assertEquals(salaryBrutRakoto, calendarJune.salaryBrut());
+        assertEquals(salaryNetRakoto, calendarJune.salaryNet());
 
+        assertEquals(salaryRabe, calendarJune.salaryGuardian(588, "STD22104", 1));
+        assertEquals(salaryBrutRabe, calendarJune.salaryBrut());
+        assertEquals(salaryNetRabe, calendarJune.salaryNet());
+    }
 
 }

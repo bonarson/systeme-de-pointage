@@ -74,8 +74,11 @@ public class CalendarJune {
         return x;
     }
 
+
+    Double salary = (double) 0;
+
     public Double salaryGuardian(int sumOfNumberWorking, String serialGuardian, int numberHolidays) {
-        Double salary = (double) 0;
+
         String serialRakoto = "STD22108";
         String serialRabe = "STD22104";
         if (serialGuardian.equals(serialRakoto)) {
@@ -99,4 +102,13 @@ public class CalendarJune {
         }
         return salary;
     }
+
+    public double salaryBrut() {
+        return salary;
+    }
+
+    public double salaryNet() {
+        return (salary * 80) / 100;
+    }
+
 }

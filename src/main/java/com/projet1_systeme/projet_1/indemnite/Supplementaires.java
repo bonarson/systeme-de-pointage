@@ -8,10 +8,14 @@ public class Supplementaires {
         if (categorieName.equals("norma")) {
             return (nombreHeure * (2500 * 1.3));
         } else if (categorieName.equals("gardien")) {
+
             if (serialNumber.equals(serialRakoto)){
-                return (nombreHeure * (((1 * 100000 / 7) / 10) * 1.3));
+
+                return (nombreHeure * (((1 * 100000 / 7) / 10) * 1.5));
+
             } else if (serialNumber.equals(serialRabe)) {
-                return (nombreHeure * (((1 * 130000 / 7) / 14) * 1.3));
+
+                return (nombreHeure * (((1 * 130000 / 7) / 14) * 1.5));
 
             }
 

@@ -47,7 +47,9 @@ public class Projet1Application {
 //        System.out.println(calendarJune.displayPointages());
 
         CalendarJune calendarJune = new CalendarJune();
-        System.out.println(calendarJune.salaryGuardian(420, "STD22108", 3));
+        System.out.println(calendarJune.salaryGuardian(588, "STD22104", 1));
+        System.out.println("brut :"+ calendarJune.salaryBrut());
+        System.out.println("net :"+ calendarJune.salaryNet());
 
     }
 
